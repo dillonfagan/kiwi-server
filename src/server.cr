@@ -13,7 +13,8 @@ module KVS
                 end
                 
                 get "/api/v0/stores" do
-                    @@base.stores.to_json
+                    stores = @@base.stores
+                    GetStoresResponse.new(stores).to_json
                 end
                 
                 put "/api/v0/stores" do |env|
