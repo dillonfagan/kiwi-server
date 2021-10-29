@@ -36,8 +36,7 @@ module KVS
                 put "/api/v0/stores/:store" do |env|
                     store_name = env.params.url["store"]
                     value = env.params.json["value"].as(String)
-                    id = @@base.store(store_name).push(value)
-                    PutEntryResponse.new(id.to_s).to_json
+                    PutEntry.work(@@base, store_name, value).to_json
                 end
                 
                 Kemal.run
