@@ -1,6 +1,7 @@
 require "./base"
 require "./store"
 require "./server"
+require "./api"
 
 module KVS
     VERSION = "0.1.0"
