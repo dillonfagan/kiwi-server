@@ -6,7 +6,7 @@ authors:
 
 targets:
   kvs:
-    main: src/kvs.cr
+    main: src/app.cr
 
 dependencies:
   kemal:

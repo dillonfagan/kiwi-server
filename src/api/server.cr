@@ -30,8 +30,7 @@ module KVS
                 get "/api/v0/stores/:store/:id" do |env|
                     store_name = env.params.url["store"]
                     id = env.params.url["id"]
-                    value = @@base.store(store_name).get(KVS::ID.new(id))
-                    GetEntryResponse.new(id, value).to_json
+                    GetEntry.work(@@base, store_name, KVS::ID.new(id)).to_json
                 end
                 
                 put "/api/v0/stores/:store" do |env|
