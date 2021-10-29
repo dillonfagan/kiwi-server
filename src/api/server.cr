@@ -1,12 +1,12 @@
 require "kemal"
 require "json"
-require "../kvs"
+require "../kiwi"
 require "./messages/all"
 
-module KVS
+module Kiwi
     module API
         class Server
-            @@base = KVS::Base.new
+            @@base = Kiwi::Base.new
 
             def self.start
                 before_all "/api" do |env|
@@ -30,7 +30,7 @@ module KVS
                 get "/api/v0/stores/:store/:id" do |env|
                     store_name = env.params.url["store"]
                     id = env.params.url["id"]
-                    GetEntry.work(@@base, store_name, KVS::ID.new(id)).to_json
+                    GetEntry.work(@@base, store_name, Kiwi::ID.new(id)).to_json
                 end
                 
                 put "/api/v0/stores/:store" do |env|
@@ -39,6 +39,7 @@ module KVS
                     PutEntry.work(@@base, store_name, value).to_json
                 end
                 
+                puts "Starting Kiwi Server..."
                 Kemal.run
             end
         end

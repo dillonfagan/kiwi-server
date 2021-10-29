@@ -1,7 +1,7 @@
-module KVS
+module Kiwi
     module API
         class GetEntry
-            def self.work(base : KVS::Base, store : String, id : KVS::ID) : GetEntryResponse
+            def self.work(base : Kiwi::Base, store : String, id : Kiwi::ID) : GetEntryResponse
                 value = base.store(store).get(id)
                 return GetEntryResponse.new(id.to_s, value)
             end

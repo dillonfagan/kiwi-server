@@ -1,3 +1,3 @@
 require "./api/server"
 
-KVS::API::Server.start
+Kiwi::API::Server.start

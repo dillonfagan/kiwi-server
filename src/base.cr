@@ -1,7 +1,7 @@
 require "json"
 require "./store"
 
-module KVS
+module Kiwi
   class Base
     getter stores = Hash(String, Store).new
 

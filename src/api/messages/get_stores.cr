@@ -1,7 +1,7 @@
-module KVS
+module Kiwi
     module API
         class GetStores
-            def self.work(base : KVS::Base) : KVS::API::GetStoresResponse
+            def self.work(base : Kiwi::Base) : GetStoresResponse
                 stores = base.stores
                 return GetStoresResponse.new(stores)
             end

@@ -1,7 +1,7 @@
-module KVS
+module Kiwi
     module API
         class PutEntry
-            def self.work(base : KVS::Base, store : String, value : String) : PutEntryResponse
+            def self.work(base : Kiwi::Base, store : String, value : String) : PutEntryResponse
                 id = base.store(store).push(value)
                 return PutEntryResponse.new(id.to_s)
             end

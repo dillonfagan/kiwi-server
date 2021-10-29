@@ -1,7 +1,7 @@
 require "json"
 require "uuid"
 
-module KVS
+module Kiwi
   class Store
     include JSON::Serializable
 
