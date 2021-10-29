@@ -1,6 +1,7 @@
 require "kemal"
 require "json"
-require "./kvs"
+require "../kvs"
+require "./controllers/controllers"
 
 module KVS
     module API

@@ -1,3 +1,3 @@
 require "spec"
 require "../src/kvs"
-require "../src/controllers/controllers"
+require "../src/api/controllers/controllers"
