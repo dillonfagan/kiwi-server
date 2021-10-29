@@ -14,14 +14,12 @@ module KVS
                 end
                 
                 get "/api/v0/stores" do
-                    KVS::API::GetStores.work(@@base).to_json
+                    GetStores.work(@@base).to_json
                 end
                 
                 put "/api/v0/stores" do |env|
                     name = env.params.json["name"].as(String)
-                    @@base.create(name)
-                    @@base.stores.to_json
-                    PutStoreResponse.new(name).to_json
+                    PutStore.work(@@base, name).to_json
                 end
                 
                 get "/api/v0/stores/:store" do |env|

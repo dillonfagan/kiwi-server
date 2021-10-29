@@ -10,14 +10,6 @@ module KVS
             end
         end
 
-        struct PutStoreResponse
-            include JSON::Serializable
-            property name : String
-
-            def initialize(@name : String)
-            end
-        end
-
         struct GetEntryResponse
             include JSON::Serializable
             property id : String
