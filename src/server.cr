@@ -20,6 +20,7 @@ module KVS
                     name = env.params.json["name"].as(String)
                     @@base.create(name)
                     @@base.stores.to_json
+                    PutStoreResponse.new(name).to_json
                 end
                 
                 get "/api/v0/stores/:store" do |env|
