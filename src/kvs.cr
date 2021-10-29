@@ -4,11 +4,7 @@ module KVS
   VERSION = "0.1.0"
 
   class Base
-    getter stores : Hash(String, Store)
-
-    def initialize
-      @stores = Hash(String, Store).new
-    end
+    getter stores = Hash(String, Store).new
 
     def store(name : String) : Store
       @stores[name]
@@ -22,11 +18,10 @@ module KVS
   class Store
     include JSON::Serializable
 
-    data : Hash(String, String)
+    @data = Hash(String, String).new
     getter name : String
 
     def initialize(@name : String)
-      @data = Hash(String, String).new
     end
 
     def value(key : String) : String
