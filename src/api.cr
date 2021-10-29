@@ -2,6 +2,15 @@ require "json"
 
 module KVS
     module API
+        struct GetEntryResponse
+            include JSON::Serializable
+            property id : String
+            property value : String
+
+            def initialize(@id : String, @value : String)
+            end
+        end
+
         struct PutEntryResponse
             include JSON::Serializable
             property id : String
