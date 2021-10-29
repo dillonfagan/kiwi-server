@@ -2,6 +2,14 @@ require "json"
 
 module KVS
     module API
+        struct GetStoreResponse
+            include JSON::Serializable
+            property store : Store
+
+            def initialize(@store : Store)
+            end
+        end
+
         struct PutStoreResponse
             include JSON::Serializable
             property name : String

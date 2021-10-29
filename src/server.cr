@@ -25,7 +25,8 @@ module KVS
                 
                 get "/api/v0/stores/:store" do |env|
                     store_name = env.params.url["store"]
-                    @@base.store(store_name).to_json
+                    store = @@base.store(store_name)
+                    GetStoreResponse.new(store).to_json
                 end
                 
                 get "/api/v0/stores/:store/:id" do |env|
