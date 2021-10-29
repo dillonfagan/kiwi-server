@@ -1,4 +1,5 @@
 require "json"
+require "uuid"
 
 module KVS
   class Store
@@ -10,12 +11,30 @@ module KVS
     def initialize(@name : String)
     end
 
-    def value(key : String) : String
-      @data[key]
+    def push(value : String) : ID
+      id = ID.new
+      @data[id.to_s] = value
+      return id
     end
 
-    def set(key : String, value : String)
-      @data[key] = value
+    def get(id : ID) : String
+      return @data[id.to_s]
+    end
+  end
+
+  struct ID
+    include JSON::Serializable
+    @value : String
+
+    def initialize
+      @value = UUID.random.to_s
+    end
+
+    def initialize(@value : String)
+    end
+
+    def to_s
+      return @value
     end
   end
 end

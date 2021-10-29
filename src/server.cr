@@ -27,17 +27,17 @@ module KVS
                     @@base.store(store_name).to_json
                 end
                 
-                get "/api/v0/stores/:store/:key" do |env|
+                get "/api/v0/stores/:store/:id" do |env|
                     store_name = env.params.url["store"]
-                    key = env.params.url["key"]
-                    @@base.store(store_name).value(key)
+                    id = env.params.url["id"]
+                    @@base.store(store_name).get(KVS::ID.new(id))
                 end
                 
-                put "/api/v0/stores/:store/:key" do |env|
+                put "/api/v0/stores/:store" do |env|
                     store_name = env.params.url["store"]
-                    key = env.params.url["key"]
                     value = env.params.json["value"].as(String)
-                    @@base.store(store_name).set(key, value)
+                    id = @@base.store(store_name).push(value)
+                    { "id": id.to_s }.to_json
                 end
                 
                 Kemal.run

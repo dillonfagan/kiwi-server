@@ -6,9 +6,15 @@ describe KVS::Store do
     store.name.should eq("flavors")
   end
 
-  it "sets and retrieves values" do
-    store = KVS::Store.new("car_brands")
-    store.set("0", "Aston Martin")
-    store.value("0").should eq("Aston Martin")
+  it "returns an ID when pushing an entry" do
+    store = KVS::Store.new("airlines")
+    id = store.push("PanAm")
+    id.should_not be_nil
+  end
+
+  it "return the entry's value, given its ID" do
+    store = KVS::Store.new("currencies")
+    id = store.push("DKK")
+    store.get(id).should eq("DKK")
   end
 end
