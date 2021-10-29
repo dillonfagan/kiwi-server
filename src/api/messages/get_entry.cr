@@ -6,14 +6,14 @@ module KVS
                 return GetEntryResponse.new(id.to_s, value)
             end
         end
-    end
 
-    struct GetEntryResponse
-        include JSON::Serializable
-        property id : String
-        property value : String
-
-        def initialize(@id : String, @value : String)
+        struct GetEntryResponse
+            include JSON::Serializable
+            property id : String
+            property value : String
+    
+            def initialize(@id : String, @value : String)
+            end
         end
     end
 end
