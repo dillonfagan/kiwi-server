@@ -1,6 +1,6 @@
 require "kemal"
+require "kiwi"
 require "json"
-require "../kiwi"
 require "./messages/all"
 
 module Kiwi

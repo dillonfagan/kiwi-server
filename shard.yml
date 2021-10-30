@@ -11,6 +11,8 @@ targets:
 dependencies:
   kemal:
     github: kemalcr/kemal
+  kiwi:
+    github: dillonfagan/kiwi
 
 crystal: 1.1.1
 

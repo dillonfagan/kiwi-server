@@ -16,6 +16,10 @@ shards:
     git: https://github.com/jeromegn/kilt.git
     version: 0.6.1
 
+  kiwi:
+    git: https://github.com/dillonfagan/kiwi.git
+    version: 0.1.0
+
   radix:
     git: https://github.com/luislavena/radix.git
     version: 0.4.1
