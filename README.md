@@ -1,18 +1,6 @@
-# kvs
+# Kiwi Server
 
-TODO: Write a description here
-
-## Installation
-
-TODO: Write installation instructions here
-
-## Usage
-
-TODO: Write usage instructions here
-
-## Development
-
-TODO: Write development instructions here
+A server that exposes a Kiwi database instance with a REST API.
 
 ## Contributing
 
