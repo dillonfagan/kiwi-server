@@ -18,7 +18,7 @@ shards:
 
   kiwi:
     git: https://github.com/dillonfagan/kiwi.git
-    version: 0.1.0
+    version: 0.4.1
 
   radix:
     git: https://github.com/luislavena/radix.git

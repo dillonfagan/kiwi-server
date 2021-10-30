@@ -1,17 +1,21 @@
+require "json"
+require "./models/entry"
+
 module Kiwi
     module API
         class PutEntry
             def self.work(base : Kiwi::Base, store : String, value : String) : PutEntryResponse
-                id = base.store(store).push(value)
-                return PutEntryResponse.new(id.to_s)
+                summary = base.store(store).put(value)
+                return PutEntryResponse.new(summary)
             end
         end
 
         struct PutEntryResponse
             include JSON::Serializable
-            property id : String
+            property entry : Models::Entry
 
-            def initialize(@id : String)
+            def initialize(summary : EntrySummary)
+                @entry = Models::Entry.new(summary)
             end
         end
     end

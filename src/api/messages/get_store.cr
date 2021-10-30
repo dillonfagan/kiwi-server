@@ -1,3 +1,6 @@
+require "json"
+require "./models/store"
+
 module Kiwi
     module API
         class GetStore
@@ -9,9 +12,10 @@ module Kiwi
 
         struct GetStoreResponse
             include JSON::Serializable
-            property store : Store
+            property store : Models::Store
 
-            def initialize(@store : Store)
+            def initialize(store : Kiwi::Store)
+                @store = Models::Store.new(store)
             end
         end
     end

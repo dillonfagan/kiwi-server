@@ -5,7 +5,7 @@ authors:
   - Dillon Fagan <dillonfagan@pm.me>
 
 targets:
-  kvs:
+  kiwi-server:
     main: src/app.cr
 
 dependencies:
