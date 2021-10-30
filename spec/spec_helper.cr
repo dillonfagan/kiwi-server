@@ -1,3 +1,3 @@
 require "spec"
-require "../src/kiwi"
+require "kiwi"
 require "../src/api/messages/all"
