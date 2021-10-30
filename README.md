@@ -1,6 +1,8 @@
 # Kiwi Server
 
-A server that exposes a Kiwi database instance with a REST API.
+A server that exposes a Kiwi database behind a REST API.
+
+The database and the server are still in early development. The database is currently in-memory ONLY, so use with caution.
 
 ## Contributing
 
