@@ -1,4 +1,5 @@
 name: kiwi-server
+description: A server that exposes a Kiwi database instance with a REST API.
 version: 0.1.0
 
 authors:
